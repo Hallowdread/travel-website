@@ -1,0 +1,882 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:ital,wght@1,500&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a, ul {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+:root {
+    --main-bg-color: #17181a;
+    --white-color: #fff;
+    --color-one: rgb(255, 139, 93);
+    --color-two: rgb(86, 124, 228);
+    --color-three: rgb(167, 110, 231);
+    --color-four: rgb(110, 231, 110);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: var(--main-bg-color);
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* main {
+    position: absolute;
+} */
+
+section{
+    overflow: hidden;
+}
+
+#logo {
+    font-size: 2rem;
+    color: var(--white-color);
+    font-family: 'Abril Fatface', sans-serif;
+}
+
+.nav-header {
+    min-height: 12vh;
+    padding: 2rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    width: 85%;
+    position: relative;
+    font-size: 1rem;
+    z-index: 2;
+}
+
+.line1,
+.line2,
+.line3{
+    width: 3rem;
+    height: 0.2rem;
+    margin: 0.4rem;
+    background: var(--white-color);
+    pointer-events: none;
+}
+
+.burger {
+    cursor: pointer;
+}
+
+/** Hero Section */
+.slide {
+    min-height: 100vh;
+    width: 85%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px auto 0px auto;
+    overflow-x: hidden;
+    background: var(--main-bg-color);
+    color: var(--white-color);
+}
+
+.hero-desc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-basis: 25rem;
+    flex: 1;
+    padding-left: 4rem;
+    position: relative;
+}
+
+.hero-desc h2 {
+    font-size: 5.2rem;
+    font-family: 'Abril Fatface', sans-serif;
+}
+
+.hero-desc p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding: 2rem 0rem;
+}
+
+.explore {
+    align-self: flex-start;
+    border: 1px solid var(--white-color);
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    color: var(--white-color);
+    text-transform: uppercase;
+}
+
+.hero-img {
+    flex-basis: 25rem;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.mountain-span{
+    color: var(--color-one);
+}
+.hike-span {
+    color: var(--color-two);
+}
+.fashion-span {
+    color: var(--color-three);
+}
+
+.reveal-img, 
+.reveal-text {
+    position: absolute;
+    top: -2%;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background: var(--main-bg-color);
+}
+
+/** Nav Links */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--main-bg-color);
+    background: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 1;
+    z-index: 1;
+    margin: 0rem auto 0rem auto;
+    -webkit-clip-path: circle(50px at 100% -10%);
+    clip-path: circle(50px at 100% -10%);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-basis: 25rem;
+    flex: 1;
+    font-size: 4.3rem;
+    line-height: 2;
+}
+
+.nav-links a {
+    color: var(--main-bg-color);
+}
+
+.nav-links li {
+    transition: .2s ease-in-out 0s;
+}
+
+.nav-links li:hover {
+    font-weight: 600;
+    cursor: pointer;
+    transform: scale(1.25);
+}
+
+.contact {
+    flex-basis: 25rem;
+    flex: 1;
+}
+
+.contact h2 {
+    font-size: 3rem;
+}
+
+.contact p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    width: 70%;
+}
+
+body.hide {
+    overflow: hidden;
+}
+
+
+/** Cursor */
+.cursor {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: 2px solid var(--white-color);
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease-in-out;
+    transition-property: background, transform;
+    transform-origin: 75% 75%;
+}
+
+.cursor.nav-active{
+    background: var(--color-two);
+    transform: scale(2);
+}
+
+.cursor.explore-active{
+    transform: scale(2);
+    background: var(--white-color);
+} 
+
+.cursor-text {
+    position: absolute;
+    color: black;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.title {
+    position: relative;
+    overflow: hidden;
+}
+
+/**Other stuffs*/
+.title-swipe {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    mix-blend-mode: darken;
+    transform: translateY(100%);
+}
+
+.t-swipe1 {
+    background: var(--color-one);
+}
+.t-swipe2{
+    background: var(--color-two);
+}
+.t-swipe3 {
+    background: var(--color-three);
+}
+
+.title-line {
+    background: var(--white-color);
+    width: 250px;
+    height: 3px;
+    position: absolute;
+    top: 0px;
+    left: 550px;
+    transform: rotate(90deg);
+}
+
+.scrollmagic-pin-spacer{
+    position: static !important;
+}
+
+/*? Mountain Page */
+.slide-v2 {
+    min-height: 100vh;
+    width: 85%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px auto 0px auto;
+    overflow-x: hidden;
+    background: var(--main-bg-color);
+    color: var(--white-color);
+}
+
+.mountain-hero-desc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-basis: 25rem;
+    flex: 1;
+    padding-left: 4rem;
+    position: relative;
+}
+
+.mountain-hero-desc h2 {
+    font-size: 5.2rem;
+    font-family: 'Abril Fatface', sans-serif;
+}
+
+.mountain-hero-desc p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding: 2rem 0rem;
+}
+
+.mountain-hero-img {
+    flex-basis: 25rem;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.mountain-hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.mountain-span-one{
+    color: var(--color-three);
+}
+/*? Mountain Section 2  */
+.slides{
+    min-height: 100vh;
+    width: 85%;
+    margin: 0px auto 0px auto;
+    /* overflow-x: hidden; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+    position: relative;
+}
+
+.slide-1,
+.slide-2,
+.slide-3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.slides-img{
+    width: 450px;
+    height: 319px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.slides-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.slides h3 {
+    font-size: 1.8rem;
+    padding: 1.4rem  0rem;
+    color: var(--white-color);
+    font-family: 'Abril Fatface', sans-serif;
+    letter-spacing: 1.4px;
+}
+
+.slides p {
+    font-size: 1.2rem;
+    color: var(--white-color);
+}
+
+.mountain-span-two{
+    color: var(--color-two);
+}
+.mountain-span-three{
+    color: var(--color-three);
+}
+.mountain-span-four {
+    color: var(--color-four);
+}
+
+/*? Hike Page */
+.slide-v3 {
+    min-height: 110vh;
+    width: 75%;
+    margin: 0px auto 0px auto;
+    overflow-x: hidden;
+    grid-gap: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hike-text {
+    flex: 1;
+    position: relative;
+}
+
+.hike-text h2 {
+    color: var(--white-color);
+    font-size: 5rem;
+    font-family: 'Abril Fatface', sans-serif;
+    font-weight: 20;
+}
+
+.hike-text p {
+    color: var(--white-color);
+    font-size: 1.4rem;
+    padding: 2rem 0rem;
+}
+
+.hike-img {
+    /* width: 470px;
+    height: 728px; */
+    position: relative;
+    overflow: hidden;
+    flex: 0.6;
+} 
+
+.hike-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hike-no{
+    position: absolute;
+    bottom: 530px;
+    left: 20px;
+    opacity: 0.1;
+    font-size: 12rem;
+    color: var(--white-color);
+}
+
+.hike-span-one{
+    color: var(--color-three);
+}
+.hike-span-two{
+    color: var(--color-two);
+}
+.hike-span-three {
+    color: var(--color-three);
+}
+
+/**Fashion Page */
+.slide-v4 {
+    min-height: 110vh;
+    width: 75%;
+    margin: 0px auto 0px auto;
+    overflow-x: hidden;
+    grid-gap: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.fashion-text {
+    flex: 1;
+    position: relative;
+}
+
+.fashion-text h2 {
+    color: var(--white-color);
+    font-size: 5rem;
+    font-family: 'Abril Fatface', sans-serif;
+    font-weight: 20;
+}
+
+.fashion-text p {
+    color: var(--white-color);
+    font-size: 1.4rem;
+    padding: 2rem 0rem;
+}
+
+.fashion-img {
+    /* width: 470px;
+    height: 728px; */
+    position: relative;
+    overflow: hidden;
+    flex: 0.6;
+} 
+
+.fashion-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fashion-no{
+    position: absolute;
+    bottom: 30px;
+    left: 580px;
+    opacity: 0.1;
+    font-size: 11rem;
+    color: var(--white-color);
+}
+
+.fashion-span-one{
+    color: var(--color-three);
+}
+.fashion-span-two{
+    color: var(--color-two);
+}
+.fashion-span-three {
+    color: var(--color-three);
+}
+
+/** Swipe Animation */
+.swipe {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.swipe1 {
+    background: var(--color-one);
+    z-index: 5;
+}
+.swipe2 {
+    background: var(--color-two);
+    z-index: 4;
+}
+.swipe3 {
+    background: var(--color-three);
+    z-index: 3;
+}
+
+/** Media Queries */
+
+@media(max-width: 960px){
+
+    /*? Home Page */
+
+    .hero-desc{
+        flex-basis: 1rem;
+    }
+
+    .hero-img {
+        flex-basis: 3rem;
+    }
+
+    .hero-desc h2{
+        font-size: 3rem;
+    }
+
+    .hero-desc p {
+        font-size: 1.3rem;
+        padding: 0.9rem 0;
+    }
+
+    .explore {
+        padding: 0.7rem 1.2rem;
+        font-size: 1rem;
+    }
+
+    .nav-bar{
+        display: block;
+    }
+
+    .nav-links{
+        font-size: 3rem;
+        margin: 6rem 0;
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /*? Mountain Page */
+    .mountain-hero-img{
+        flex-basis: 10rem;
+    }
+
+    .mountain-hero-desc{
+        flex-basis: 8rem;
+        width: 10%;
+    }
+
+    .mountain-hero-desc h2 {
+        font-size: 3rem;
+    }
+
+    .mountain-hero-desc p {
+        font-size: 1.2rem;
+        padding: 0.2rem 0;
+    }
+
+    .slides{
+        grid-template-columns: 1fr;
+    }
+
+    .slide-1,
+    .slide-2,
+    .slide-3{
+        margin: 2rem auto;
+    }
+
+    .slides h3{
+        font-size: 2rem;
+    }
+
+    .slides p {
+        font-size: 1.2rem;
+        width: 650px;
+        padding: 0.3rem 1.9rem;
+    }
+
+    /*? Hike Page & Fashion Page */
+    .hike-img,
+    .fashion-img {
+        flex: 1;   
+    }
+
+    .hike-text h2,
+    .fashion-text h2 {
+        font-size: 3.1rem;
+    }
+    
+    .hike-text p,
+    .fashion-text p {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 680px){
+    /*? Home Page */
+    #logo {
+        font-size: 1.7rem;
+    }
+
+    .nav-header{
+        padding: 2.5rem 0;
+    }
+
+    .line1,
+    .line2,
+    .line3 {
+        width: 2.5rem;
+    }
+
+    .slide{
+        display: block;
+    }
+
+    .hero-img {
+        display: block;
+        width: 80%;
+        margin: 0px auto 0px auto;
+    }
+
+    .nav-bar{
+        overflow-y: scroll;
+    }
+
+    .cursor{
+        width: 40px;
+        height: 40px;
+    }
+
+    /*? Mountain Page */
+    .slide-v2{
+        display: block;
+        overflow: visible;
+    }
+
+    .mountain-hero-desc{
+        margin: 0px auto 0px auto;
+        width: 100%;
+        padding: 1.2rem 0rem;
+    }
+
+    .slides{
+        margin: 0;
+        overflow: visible;
+    }
+
+    /*? Hike Page & Fashion Page */
+    .slide-v3,
+    .slide-v4{
+        display: block;
+        width: 60%;
+    }
+
+    .hike-img,
+    .fashion-img{
+        height: 518px;
+    }
+
+    .hike-2, 
+    .hike-3 {
+        margin: 5rem auto;
+    }
+
+    .hike-no,
+    .fashion-no{
+        bottom: 730px;
+        left: 200px;
+        font-size: 10rem;
+    }
+    
+
+}
+
+@media screen and (max-width: 415px){
+    /*? Home Page */
+    #logo {
+        font-size: 1.5rem;
+    }
+
+    .line1,
+    .line2,
+    .line3 {
+        width: 2.2rem;
+    }
+
+    .hero-img{
+        width: 100%;
+    }
+
+    .hero-desc{
+      padding: 1rem 0.3rem;
+    }
+
+    .hero-desc h2{
+        font-size: 2.8rem;
+    }
+
+    .hero-desc p {
+        font-size: 1.1rem;
+    }
+
+    .reveal-text{
+        top: 0;
+    }
+
+    /*? Mountain Page */
+    .slides{
+        display: block;
+        margin: 0px auto 0px auto;
+    }
+
+    .slides-img{
+        width: 334px;
+        height: 223px;
+    }
+
+    .slides h3 {
+        font-size: 1.7rem;
+    }
+
+    .slides p {
+        font-size: 1.2rem;
+        width: 350px;
+    }
+
+    .slide-1,
+    .slide-2,
+    .slide-3{
+        margin: 3rem auto;
+    }
+
+    /*? Hike & Fashion Page */
+    .slide-v3,
+    .slide-v4{
+        width: 90%;
+    }
+
+    .hike-no,
+    .fashion-no{
+        display: none;
+    }
+
+    .hike-text h2,
+    .fashion-text h2{
+        font-size: 2.4rem;
+    }
+
+    .hike-text p,
+    .hike-text p{
+        font-size: 1.1rem;
+    }
+
+    .hike-img,
+    .fashion-img{
+        height: 378px;
+    }
+}
+
+@media screen and (max-width: 322px){
+    /*? Home Page */
+    #logo {
+        font-size: 1.4rem;
+    }
+
+    .line1,
+    .line2,
+    .line3 {
+        width: 2rem;
+    }
+
+    .slide{
+        min-height: 80vh;
+    }
+
+    .hero-desc h2{
+        font-size: 1.8rem;
+    }
+
+    .hero-desc p {
+        font-size: 1rem;
+    }
+
+    .explore {
+        padding: 0.7rem 1.2rem;
+        font-size: 1rem;
+    }
+
+    .nav-links{
+        font-size: 2.5rem;
+    }
+
+    .contact h2 {
+        font-size: 2rem;
+    }
+    
+    .contact p {
+        font-size: 1rem;
+        padding: 0.8rem;
+        width: 70%;
+    }
+
+    /*?Mountain Page */
+
+    .slides {
+        margin: 0px auto 0px auto;
+    }
+
+    .slides-img{
+        width: 256px;
+        height: 171px;
+    }
+
+    /*? Hike & Fashion Page */
+    .slide-v3,
+    .slide-v4{
+        width: 90%;
+    }
+}
