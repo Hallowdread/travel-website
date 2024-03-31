@@ -3,6 +3,7 @@
 ## Introduction
 
 Welcome to the Travel Website! This README will provide you with an overview of the project.
+You can view the live website at: https://hallowdread.github.io/travel-website/
 
 ## Features
 
