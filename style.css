@@ -683,7 +683,20 @@ body.hide {
     }
 
     .nav-bar{
-        overflow-y: scroll;
+        overflow: hidden;
+    }
+
+    .nav-links{
+        font-size: 2.7rem;
+        margin: 6rem 0;
+    }
+
+    .contact h2 {
+        font-size: 2.9rem;
+    }
+
+    .contact p{
+        font-size: 1.5rem;
     }
 
     .cursor{
@@ -765,6 +778,23 @@ body.hide {
 
     .reveal-text{
         top: 0;
+    }
+
+    .nav-bar{
+        overflow: hidden;
+    }
+
+    .nav-links{
+        font-size: 2rem;
+    }
+
+    .contact h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact p{
+        font-size: 1.3rem;
     }
 
     /*? Mountain Page */
@@ -849,18 +879,21 @@ body.hide {
         font-size: 1rem;
     }
 
+    .nav-bar{
+        overflow: hidden;
+    }
+
     .nav-links{
-        font-size: 2.5rem;
+        font-size: 1.9rem;
     }
 
     .contact h2 {
         font-size: 2rem;
+        margin-bottom: 1.2rem;
     }
-    
-    .contact p {
-        font-size: 1rem;
-        padding: 0.8rem;
-        width: 70%;
+
+    .contact p{
+        font-size: 1.2rem;
     }
 
     /*?Mountain Page */
