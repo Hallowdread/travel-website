@@ -1,6 +1,6 @@
 # travel-website
 
-![Travel-website image](img\travel-website-img.png)
+![Travel-website image](img\travel.jpg)
 
 ## Introduction
 
