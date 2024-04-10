@@ -1,9 +1,16 @@
 # travel-website
 
+![Travel-website image](img\travel-website-img.png)
+
 ## Introduction
 
 Welcome to the Travel Website! This README will provide you with an overview of the project.
-You can view the live website at: https://hallowdread.github.io/travel-website/
+
+You can view the live website at:
+
+```bash
+https://hallowdread.github.io/travel-website/
+```
 
 ## Features
 
@@ -26,7 +33,7 @@ You can view the live website at: https://hallowdread.github.io/travel-website/
 1. **Clone Repository**:
 
    ```bash
-   git clone [repository_url]
+   git clone [https://github.com/Hallowdread/travel-website.git]
    ```
 
 2. **Navigate to Project Directory**:
